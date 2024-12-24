@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Ice Cream Shop</title>
+    <!-- 외부 CSS 파일 링크 -->
+    <link rel="stylesheet" href="12345.css">
+    <!-- 외부 JavaScript 파일 링크 -->
+    <script src="12345.js" defer></script>
+</head>
+<body> 
+    <!-- 페이지 제목 -->
+    <h1>Drag and Drop Ice Cream Shop</h1>
+    
+    <div class="container">
+        <!-- 메뉴 영역 -->
+        <div class="menu">
+            <h2>메뉴</h2>
+            <!-- 각 메뉴 아이템을 드래그할 수 있게 설정 -->
+            <div class="menu-item" draggable="true" data-id="choco" data-name="초코 아이스크림" data-price="3000">
+                <img src="choc-ice.jpg" alt="초코 아이스크림">
+                초코 아이스크림 - 3,000원
+            </div>
+            <div class="menu-item" draggable="true" data-id="vanilla" data-name="바닐라 아이스크림" data-price="3500">
+                <img src="vanilla-ice.jpg" alt="바닐라 아이스크림">
+                바닐라 아이스크림 - 3,500원
+            </div>
+            <div class="menu-item" draggable="true" data-id="strawberry" data-name="딸기 아이스크림" data-price="4000">
+                <img src="strawberry-ice.jpg" alt="딸기 아이스크림">
+                딸기 아이스크림 - 4,000원
+            </div>
+        </div>
+        
+        <!-- 장바구니 영역 -->
+        <div class="cart">
+            <h2>장바구니</h2>
+            <!-- 장바구니가 비었을 때 나타나는 메시지 -->
+            <div class="empty-message">드래그하여 메뉴를 추가하세요.</div>
+            <!-- 장바구니 아이템 리스트 -->
+            <ul class="cart-items"></ul>
+        </div>
+
+        <!-- 결제 버튼 -->
+        <button class="checkout" disabled>결제</button>
+
+        <!-- 영수증 영역 -->
+        <div class="receipt hidden">
+            <h2>영수증</h2>
+            <!-- 영수증 항목 리스트 -->
+            <ul id="receipt-list"></ul>
+            <!-- 총액 표시 -->
+            <p>총액: <span id="total-price">0</span>원</p>
+        </div>
+    </div>
+
+    <!-- 관리자 기능 영역 (숨겨져 있음) -->
+    <div class="management hidden">
+        <h2>관리자 기능</h2>
+        <!-- 메뉴 이름 입력 필드 -->
+        <input type="text" id="menu-name" placeholder="메뉴 이름">
+        <!-- 메뉴 가격 입력 필드 -->
+        <input type="number" id="menu-price" placeholder="메뉴 가격">
+        <!-- 메뉴 추가 버튼 -->
+        <button id="add-menu">메뉴 추가</button>
+        <!-- 메뉴 삭제 버튼 -->
+        <button id="delete-menu" class="danger">메뉴 삭제</button>
+        <!-- 판매 내역 초기화 버튼 -->
+        <button id="clear-sales-log">판매 내역 초기화</button>
+        
+        <!-- 판매 내역 영역 -->
+        <div class="sales-log">
+            <h3>판매 내역</h3>
+            <!-- 판매 내역 항목 리스트 -->
+            <ul id="sales-list"></ul>
+            <!-- 총 판매 금액 표시 -->
+            <p>총 판매 금액: <span id="total-sales">0</span>원</p>
+        </div>
+    </div>
+</body>
+</html>
 
