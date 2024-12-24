@@ -1,0 +1,180 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+    margin: 0; /* 페이지 여백 제거 */
+    padding: 0; /* 페이지 안쪽 여백 제거 */
+    background-color: #f9f9f9; /* 페이지 배경 색 */
+}
+
+h1 {
+    text-align: center; /* 제목 중앙 정렬 */
+    margin: 20px 0; /* 제목 상하 여백 */
+    color: #333; /* 제목 색 */
+}
+
+.container {
+    display: flex; /* 컨테이너 내 아이템들을 가로로 정렬 */
+    justify-content: space-around; /* 아이템들 사이에 공간 배치 */
+    padding: 20px; /* 컨테이너 내부 여백 */
+}
+
+/* Menu Section */
+.menu, .cart {
+    width: 45%; /* 메뉴와 장바구니의 너비 */
+    border: 1px solid #ddd; /* 테두리 색 */
+    border-radius: 8px; /* 둥근 모서리 */
+    background-color: #fff; /* 배경 색 */
+    padding: 10px 15px; /* 내부 여백 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.menu h2, .cart h2 {
+    font-size: 1.5rem; /* 제목 크기 */
+    color: #555; /* 제목 색 */
+    border-bottom: 2px solid #ddd; /* 제목 아래 선 */
+    padding-bottom: 5px; /* 제목 아래 여백 */
+    margin-bottom: 15px; /* 제목 아래 여백 */
+}
+
+/* Menu Items */
+.menu-item {
+    display: flex; /* 메뉴 아이템을 가로로 배치 */
+    align-items: center; /* 세로 정렬 */
+    justify-content: space-between; /* 아이템들 사이에 공간 배치 */
+    margin-bottom: 15px; /* 아이템 간 여백 */
+    padding: 10px; /* 아이템 내부 여백 */
+    border: 1px solid #ddd; /* 테두리 색 */
+    border-radius: 5px; /* 둥근 모서리 */
+    background-color: #fafafa; /* 배경 색 */
+    cursor: grab; /* 드래그 가능 상태 */
+    transition: transform 0.2s, background-color 0.3s; /* 애니메이션 효과 */
+}
+
+.menu-item img {
+    width: 50px; /* 아이템 이미지 크기 */
+    height: 50px; /* 아이템 이미지 크기 */
+    margin-right: 10px; /* 이미지와 텍스트 사이 여백 */
+    border-radius: 5px; /* 이미지 둥근 모서리 */
+}
+
+.menu-item:hover {
+    background-color: #f0f8ff; /* 호버 시 배경 색 */
+    transform: scale(1.05); /* 호버 시 아이템 크기 확장 */
+}
+
+.menu-item:active {
+    cursor: grabbing; /* 클릭 시 드래그 상태로 변경 */
+}
+
+/* Cart Section */
+.cart .empty-message {
+    text-align: center; /* 메시지 중앙 정렬 */
+    color: #999; /* 메시지 색 */
+    font-size: 1rem; /* 메시지 크기 */
+    margin-top: 20px; /* 메시지 상단 여백 */
+}
+
+.cart-items {
+    list-style: none; /* 목록 스타일 제거 */
+    padding: 0; /* 내부 여백 제거 */
+}
+
+.cart-items li {
+    display: flex; /* 카트 아이템을 가로로 배치 */
+    align-items: center; /* 세로 정렬 */
+    justify-content: space-between; /* 아이템들 사이에 공간 배치 */
+    padding: 10px; /* 아이템 내부 여백 */
+    border-bottom: 1px solid #eee; /* 아이템 간 경계선 */
+    cursor: grab; /* 드래그 가능 상태 */
+    background-color: #fafafa; /* 배경 색 */
+    transition: transform 0.2s, background-color 0.3s; /* 애니메이션 효과 */
+}
+
+.cart-items li:hover {
+    background-color: #f9f9f9; /* 호버 시 배경 색 */
+    transform: scale(1.02); /* 호버 시 아이템 크기 약간 확대 */
+}
+
+.cart-items li span {
+    margin: 0 5px; /* 텍스트 사이 여백 */
+    font-weight: bold; /* 텍스트 두껍게 */
+    color: #555; /* 텍스트 색 */
+}
+
+.cart-items li button {
+    background-color: #007bff; /* 기본 버튼 색 */
+    border: none; /* 버튼 경계선 제거 */
+    color: white; /* 버튼 텍스트 색 */
+    border-radius: 4px; /* 버튼 둥근 모서리 */
+    padding: 5px 8px; /* 버튼 내부 여백 */
+    cursor: pointer; /* 클릭 가능 상태 */
+    transition: background-color 0.3s; /* 호버 애니메이션 */
+}
+
+.cart-items li button:hover {
+    background-color: #0056b3; /* 호버 시 버튼 색 변경 */
+}
+
+.cart-items li button.decrease {
+    background-color: #dc3545; /* 감소 버튼 색 */
+}
+
+.cart-items li button.decrease:hover {
+    background-color: #b02a37; /* 감소 버튼 호버 시 색 변경 */
+}
+
+/* Checkout Button */
+.checkout {
+    width: 100%; /* 버튼 너비 */
+    padding: 10px; /* 버튼 내부 여백 */
+    margin-top: 15px; /* 버튼 상단 여백 */
+    font-size: 1rem; /* 버튼 텍스트 크기 */
+    color: white; /* 버튼 텍스트 색 */
+    background-color: #28a745; /* 버튼 배경 색 */
+    border: none; /* 버튼 경계선 제거 */
+    border-radius: 5px; /* 버튼 둥근 모서리 */
+    cursor: pointer; /* 클릭 가능 상태 */
+    transition: background-color 0.3s; /* 호버 애니메이션 */
+}
+
+.checkout:disabled {
+    background-color: #ccc; /* 비활성화된 버튼 색 */
+    cursor: not-allowed; /* 비활성화된 버튼 클릭 불가 */
+}
+
+.checkout:hover:not(:disabled) {
+    background-color: #218838; /* 호버 시 버튼 색 변경 */
+}
+
+/* Drag and Drop Feedback */
+.menu, .cart {
+    transition: background-color 0.3s, border-color 0.3s; /* 드래그 중 배경과 경계선 색 변경 애니메이션 */
+}
+
+.menu.dragover, .cart.dragover {
+    background-color: #f0f8ff; /* 드래그가 진행 중일 때 배경 색 */
+    border-color: #007bff; /* 드래그 중 경계선 색 */
+}
+
+/* Checkout Button */
+.checkout {
+    width: 120px; /* 버튼 크기 줄임 */
+    padding: 6px; /* 패딩 줄임 */
+    margin-top: 15px; /* 버튼 상단 여백 */
+    font-size: 0.9rem; /* 글자 크기 조정 */
+    color: white; /* 텍스트 색 */
+    background-color: #28a745; /* 배경 색 */
+    border: none; /* 경계선 제거 */
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer; /* 클릭 가능 상태 */
+    transition: background-color 0.3s; /* 호버 애니메이션 */
+}
+
+.checkout:disabled {
+    background-color: #ccc; /* 비활성화 상태 색 */
+    cursor: not-allowed; /* 클릭 불가 상태 */
+}
+
+.checkout:hover:not(:disabled) {
+    background-color: #218838; /* 호버 시 배경 색 변경 */
+}
